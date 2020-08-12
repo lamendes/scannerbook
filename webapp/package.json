@@ -5,6 +5,7 @@
   "dependencies": {
     "axios": "^0.19.2",
     "prop-types": "^15.7.2",
+    "quagga": "^0.12.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-icons": "^3.9.0",

@@ -1,19 +1,10 @@
+/* eslint-disable no-plusplus */
 import React from 'react';
 
-import { Container } from './styles';
+import Scanner from './Scanner/scanner';
 
 function Main() {
-  return (
-    <Container>
-      <img
-        src="https://devsamurai-materials.s3.amazonaws.com/templates/dev-samurai-white.png"
-        height="256"
-        alt="Dev Samurai"
-      />
-      <h1>Fala Samurai!</h1>
-      <p>Esse é o template básico da Dev Samurai para React.</p>
-    </Container>
-  );
+  return <Scanner />;
 }
 
 export default Main;
