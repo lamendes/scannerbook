@@ -1,10 +1,12 @@
 /* eslint-disable no-plusplus */
-import React from 'react';
+import React, {useState} from 'react';
 
-import Scanner from './Scanner/scanner';
+import Scanner from './Scanner';
+import Results from './Results';
 
 function Main() {
-  return <Scanner />;
+  const [isbn, setIsbn] = useState();
+  return <Scanner onScan={setIsbn} />;
 }
 
 export default Main;

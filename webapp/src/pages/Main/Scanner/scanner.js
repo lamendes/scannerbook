@@ -1,11 +1,13 @@
 /* eslint-disable no-plusplus */
 import React, {useEffect} from 'react';
+import PropTypes from 'prop-types';
+
 import Quagga from 'quagga';
 import {validateIsbn} from '../../../services/books';
 
 import {Video, Container, ScanMarker} from './styles';
 
-function Scanner() {
+function Scanner({onScan}) {
   let scannerAttempts = 0;
 
   const onDetected = (result) => {
@@ -14,7 +16,7 @@ function Scanner() {
     const isbn = result.codeResult.code;
 
     if (validateIsbn(isbn)) {
-      alert(`ISBN é válido ${isbn}`);
+      onScan(isbn);
     } else if (scannerAttempts >= 5) {
       alert(
         'Não é possível ler o código do livro, por favor, tente novamente.',
@@ -83,5 +85,9 @@ function Scanner() {
     </>
   );
 }
+
+Scanner.PropTypes = {
+  onScan: PropTypes.func,
+};
 
 export default Scanner;
